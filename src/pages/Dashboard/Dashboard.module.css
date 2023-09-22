@@ -1,0 +1,65 @@
+.dashboard{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.no_post p{
+    margin-bottom: 1em;
+}
+
+.dashboard h1{
+    margin-bottom: .2em;
+}
+
+.dashboard p{
+    color: #808080;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: .3em 0;
+    font-weight: bold;
+    border-bottom: 2px solid #AAA;
+}
+
+.itens{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 0;
+    border-bottom: 1px solid #DDD;
+}
+
+.actions{
+    display: flex;
+    
+}
+
+.actions a, .actions button{
+    margin-left: .2em;
+    padding: .2em .8em;
+    box-sizing: border-box;
+}
+
+.actions a{
+    border: 1px solid #FFF;
+}
+
+.actions a:hover{
+    color: #FFF;
+    border: 1px solid #AAA;
+    color: #AAA;
+}
+
+.actions button {
+    background-color: #fd5151;
+    color: #FFF;
+    border: 1px solid #fd5151;
+    opacity: .7;
+}
+
+.actions button:hover{
+    opacity: 1;
+}

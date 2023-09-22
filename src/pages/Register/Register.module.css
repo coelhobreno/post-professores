@@ -1,0 +1,20 @@
+form .gerder_group{
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+
+.gerder_group h4{
+    margin-bottom: .7em;
+}
+
+.form_radio{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gerder_input{
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    font-weight: bold;
+}

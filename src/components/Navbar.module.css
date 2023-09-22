@@ -1,0 +1,75 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    box-shadow: rgba(0, 0, 0, .40) 0 -1px 5px 0;
+    padding: .5em;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.brand svg {
+    font-size: 1.8em;
+    margin-right: .1em;
+    color: #F4B670;
+}
+
+.brand span {
+    font-weight: 600;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.navbar ul li {
+    padding: 2px 12px;
+    text-transform: uppercase;
+}
+
+.navbar .btn_log button{
+    border-radius: 0;
+}
+
+.checked_page a {
+    position: relative;
+    padding-bottom: .3em;
+}
+
+.checked_page a::after {
+    content: " ";
+    width: 0%;
+    height: 2px;
+    background-color: #F4B670;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .3s ease-in-out;
+}
+
+.checked_page a:hover::after {
+    width: 100%;
+}
+
+.active{
+    color: #F4B670;
+}
+
+.active::after {
+    content: " ";
+    width: 100% !important;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .3s ease-in-out;
+}

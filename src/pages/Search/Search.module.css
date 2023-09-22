@@ -1,0 +1,20 @@
+.search{
+    text-align: center;
+}
+
+.search h1{
+    margin-bottom: 1em;
+}
+
+.search p{
+    color: #AAA;
+    margin-bottom: 1.5em;
+}
+
+.search .posts_area {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}

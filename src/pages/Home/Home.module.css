@@ -1,0 +1,61 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home h1{
+    line-height: 1.1em;
+    margin-bottom: .2em;
+}
+
+.home p{
+    color: #AAA;
+    margin-bottom: 2em;
+}
+
+.home form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2.5em;
+}
+
+.home form .search_area{
+    display: flex;
+    align-items: center;
+    border: 1px solid #707070;
+    border-radius: 1em;
+    padding: 0 1em 0 .4em;
+    margin-right: .5em;
+    min-width: 310px;
+}
+
+.search_area svg{
+    font-size: 1.6em;
+    color: #505050;
+}
+
+.search_area input{
+    border: none;
+    width: 100%;
+}
+
+.no_post a{
+    border-radius: 0;
+    box-shadow: 1px 1px 5px 0px #505050;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.posts_area{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
