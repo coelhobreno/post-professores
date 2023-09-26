@@ -25,7 +25,7 @@ const Dashboard = () => {
                 ) : (
                     <>
                         
-                        {loading && <p>Carregando...</p>}
+                        {loading && !posts && <p>Carregando...</p>}
                         {posts &&(
                             <>
                                 <h1>Dashboard</h1>
