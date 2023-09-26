@@ -105,7 +105,7 @@ export const useAuthentication = () => {
         signOut(auth)
 
     }
-
+    
     useEffect(()=>{
         return () => {
             setCancelled(true)

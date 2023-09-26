@@ -17,9 +17,9 @@ export const useFetchDocument = (docCollection, id) => {
         setLoading(true)
 
         const loadDocument = async() => {
-            if(setCancelled){
-                return
-            }
+            if(cancelled) return
+
+            setLoading(true)
 
             try{
                 
@@ -42,7 +42,7 @@ export const useFetchDocument = (docCollection, id) => {
         loadDocument()
 
     }, [docCollection, id])
-
+    
     useEffect(()=>{
 
         return () => {

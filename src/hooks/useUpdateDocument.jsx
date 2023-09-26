@@ -52,7 +52,7 @@ export const useUpdateDocument = (docCollection) => {
         }
         
     }
-
+    
     useEffect(() => {
 
         return () => {
@@ -60,7 +60,7 @@ export const useUpdateDocument = (docCollection) => {
         }
 
     }, [])
-
+    
     return {response, updateDocument}
 
 }
