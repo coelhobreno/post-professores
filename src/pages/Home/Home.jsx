@@ -36,7 +36,7 @@ const Home = () => {
     return(
         
         <div className={styles.home}>
-            <h1>Plataforma de Aprendizado Interativo: Explore, aprenda e debata</h1>
+            <h1>Plataforma de Aprendizado Interativo: Explore, aprenda e debata!</h1>
             <p>Conecte professores e alunos para compartilhar conhecimento e ideias, enriquecendo a experiência educacional de todos.</p>
             <form onSubmit={handleSubmit}>
                 <div className={styles.search_area}>
@@ -45,6 +45,7 @@ const Home = () => {
                 </div>
                 <button className='btn dark-outline'>Pesquisar</button>
             </form>
+            
             {loading && <p>Carregando...</p>}
 
             <div className={styles.posts_area}>

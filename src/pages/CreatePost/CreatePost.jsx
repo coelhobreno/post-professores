@@ -55,8 +55,6 @@ const CreatePost = () => {
         
     }
 
-    const [subTitles, setSubTitles] = useState([])
-
     return (
         <div className="form_default">
             <div className="header">
@@ -100,7 +98,7 @@ const CreatePost = () => {
                         <textarea
                             type="text"
                             onChange={e => setBody(e.target.value)}
-                            placeholder="Insira o conteúdo do subtítulo 1" 
+                            placeholder="Insira o conteúdo do post" 
                             value={body}
                             required
                         ></textarea>
