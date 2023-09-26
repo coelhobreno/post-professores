@@ -46,7 +46,7 @@ const Home = () => {
                 <button className='btn dark-outline'>Pesquisar</button>
             </form>
             
-            {loading && <p>Carregando...</p>}
+            { loading && !posts && <p>Carregando...</p>}
 
             <div className={styles.posts_area}>
                 {posts && posts.map((post) => (
