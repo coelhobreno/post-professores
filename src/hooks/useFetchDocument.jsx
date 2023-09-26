@@ -8,16 +8,18 @@ import {
 } from 'firebase/firestore'
 
 export const useFetchDocument = (docCollection, id) => {
-
+    const [cancelled, setCancelled] = useState(false)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const [document, setDocument] = useState(null)
     
     useEffect(() => {
-        
         setLoading(true)
 
         const loadDocument = async() => {
+            if(setCancelled){
+                return
+            }
 
             try{
                 
@@ -40,6 +42,14 @@ export const useFetchDocument = (docCollection, id) => {
         loadDocument()
 
     }, [docCollection, id])
+
+    useEffect(()=>{
+
+        return () => {
+            setCancelled(true)
+        }
+        
+    },[])
     
     return {document, loading, error}
 

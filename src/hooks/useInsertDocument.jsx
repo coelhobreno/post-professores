@@ -62,7 +62,7 @@ export const useInsertDocument = (docCollection) => {
         }
 
     }
-    /*
+    
     useEffect(()=>{
 
         return () => {
@@ -71,7 +71,7 @@ export const useInsertDocument = (docCollection) => {
         
         
     },[])
-    */
+    
     return {response, insertDocument}
 
 }
