@@ -73,3 +73,13 @@
     left: 0;
     transition: .3s ease-in-out;
 }
+
+@media (max-width: 480px){
+    .navbar{
+        justify-content: center;
+        background-color: red;
+    }
+    .brand{
+        display: none;
+    }
+}
