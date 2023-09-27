@@ -22,7 +22,7 @@ const Search = () => {
         <div className={styles.search}>
             <h1>Pesquisa por: {search}</h1>
             <div className={styles.posts_area}>
-                {posts && loading && <p>Carregando...</p>}
+                {!posts && loading && <p>Carregando...</p>}
                 {posts && posts.map((post) => (
                     <CardPost post={post} key={post.title}/>
                 ))}
