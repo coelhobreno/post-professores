@@ -5,13 +5,19 @@ import { useEffect, useState } from 'react'
 import { useUpdateDocument } from '../../hooks/useUpdateDocument';
 import { useAuthValue } from '../../context/AuthContext'
 import { useNavigate, useParams } from 'react-router-dom';
-
 import { useFetchDocument } from '../../hooks/useFetchDocument';
+
+//context
+import { useValueInsertContArea } from '../../context/InsertContextContArea';
+
+//component
+import InsertContArea from '../../components/InsertContArea';
 
 const EditPost = () => {
 
     const {id} = useParams()
     const { user } = useAuthValue()
+    const {inputState, dispatch} = useValueInsertContArea()
 
     const {document: post, loading} = useFetchDocument("posts", id)
 
@@ -20,21 +26,24 @@ const EditPost = () => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
-    const [body, setBody] = useState("")
     const [tags, setTags] = useState("")
+
+    
 
     useEffect(() => {
         if(post){
             setTitle(post.title)
             setDescription(post.description)
             setImage(post.image)
-            setBody(post.body)
+            
+            dispatch({type: "PREV_STORE", payload: post.inputState})
 
             const textTags = post.tagsArray.join(", ")
             setTags(textTags)
         }
-
     }, [post])
+
+    
 
     const [formError, setFormError] = useState(null)
 
@@ -46,9 +55,8 @@ const EditPost = () => {
         setFormError("")
 
         //Verificação dos dados
-        if(!title || !description || !image || !body || !tags){
+        if(!title || !description || !image || !tags){
             return setFormError("Preencha todos os campos")
-            
         }
 
         //Verificação imagem
@@ -65,7 +73,7 @@ const EditPost = () => {
             title,
             description,
             image,
-            body,
+            inputState,
             tagsArray,
             uid: user.uid,
             createdBy: user.displayName,
@@ -78,7 +86,7 @@ const EditPost = () => {
 
     return(
         <div className="form_default">
-            {loading && <p>Carregando...</p>}
+            {loading && !post && <p>Carregando...</p>}
             {post && (
                 <>
                     <div className="header">
@@ -116,16 +124,9 @@ const EditPost = () => {
                                     required
                                 />
                             </label>
-                            <label>
-                                <span>Conteúdo</span>
-                                <textarea
-                                    type="text"
-                                    onChange={e => setBody(e.target.value)}
-                                    placeholder="Insira o conteúdo do post" 
-                                    value={body}
-                                    required
-                                ></textarea>
-                            </label>
+                            
+                            <InsertContArea/>
+
                             <label>
                                 <span>Tags</span>
                                 <input 
@@ -141,10 +142,10 @@ const EditPost = () => {
                         {!response.loading && <button className='btn'>Continuar</button>}
                         {response.loading && <button className='btn' disabled>Aguarde...</button>}
                     </form>
+                    {response.error && <p className='error'>{response.error}</p>}
+                    {formError && <p className='error'>{formError}</p>}
                 </>
             )}
-            {response.error && <p className='error'>{response.error}</p>}
-            {formError && <p className='error'>{formError}</p>}
             
         </div>
     )

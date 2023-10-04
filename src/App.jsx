@@ -7,6 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 
 //context
 import { AuthContextProvider } from './context/AuthContext'
+import { InsertContextContAreaProvider } from './context/InsertContextContArea'
 
 //components
 import Navbar from './components/Navbar'
@@ -46,7 +47,8 @@ function App() {
   return (
      
     <div className="App">
-      <AuthContextProvider value={{user}}>
+      <InsertContextContAreaProvider>
+        <AuthContextProvider value={{user}}>
         <BrowserRouter>
             <Navbar/>
             <div className="container">
@@ -67,6 +69,7 @@ function App() {
             <Footer/>
         </BrowserRouter>
       </AuthContextProvider>
+      </InsertContextContAreaProvider>
     </div>
 
   )

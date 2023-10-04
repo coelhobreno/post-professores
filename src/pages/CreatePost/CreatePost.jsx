@@ -1,33 +1,46 @@
 import styles from './CreatePost.module.css'
 
 //hooks
-import { useState } from 'react'
+import { useEffect, useState} from 'react'
 import { useInsertDocument } from '../../hooks/useInsertDocument';
 import { useAuthValue } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom';
+
+//component
+import { useValueInsertContArea } from '../../context/InsertContextContArea';
+
+//context
+import InsertContArea from '../../components/InsertContArea';
 
 const CreatePost = () => {
 
     const navigate = useNavigate()
     const { user } = useAuthValue()
 
+    //reducer de subtitulos e body
+    const { inputState, dispatch } = useValueInsertContArea()
+
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
-    const [body, setBody] = useState("")
     const [tags, setTags] = useState("")
 
     const [formError, setFormError] = useState(null)
 
     const { response, insertDocument } = useInsertDocument("posts")
 
-    const handleSubmit = async(e) => {
-        e.preventDefault()
+    useEffect(() => {
+        dispatch({type: "CLEAR"})
+    }, [])
 
+    const handleSubmit = async(e) => {
+        
+        e.preventDefault()
+        
         setFormError("")
 
         //Verificação dos dados
-        if(!title || !description || !image || !body || !tags){
+        if(!title || !description || !image || !tags){
             return setFormError("Preencha todos os campos")
         }
 
@@ -35,7 +48,7 @@ const CreatePost = () => {
         try{
             new URL(image)
         }catch(error){
-            return setFormError("A imagem precisa ser uma URL.")
+            return setFormError("A imagem é inválida")
         }
 
         //Criando array de tags
@@ -45,17 +58,21 @@ const CreatePost = () => {
             title,
             description,
             image,
-            body,
+            inputState,
             tagsArray,
             uid: user.uid,
             createdBy: user.displayName,
         })
-        
+
+        console.log(inputState)
+
+        dispatch({type: "CLEAR"})
         navigate("/")
         
     }
 
     return (
+        
         <div className="form_default">
             <div className="header">
                 <h1>Criar post</h1>
@@ -92,17 +109,8 @@ const CreatePost = () => {
                             required
                         />
                     </label>
-
-                    <label>
-                        <span>Conteúdo</span>
-                        <textarea
-                            type="text"
-                            onChange={e => setBody(e.target.value)}
-                            placeholder="Insira o conteúdo do post" 
-                            value={body}
-                            required
-                        ></textarea>
-                    </label>
+                    
+                    <InsertContArea/>
 
                     <label>
                         <span>Tags</span>

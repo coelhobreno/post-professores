@@ -1,9 +1,8 @@
 .post{
     width: 90%;
     margin: 0 auto;
-    background-color: #101010;
-    border-radius: .5em;
-    padding: 5em;
+    box-shadow: 0 0 2px 0px #FFF;
+    padding: 2em 1em;
     text-align: center;
 }
 
@@ -22,13 +21,23 @@
 }
 
 .post img{
-    width: 90%;
+    width: 100%;
     margin-bottom: 2em;
+    box-shadow: 0 0 0 1px #808080;
 }
 
-.post .body{
-    text-align: justify;
-    line-height: 1.5em;
-    color: #CCC;
-    font-size: 1em;
+.contArea{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    text-align: left;
+}
+
+.itemArea h2{
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.itemArea p{
+    color: #AAA;
 }

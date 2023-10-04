@@ -9,7 +9,10 @@ const CardPost = ({post}) => {
             <p>{post.description}</p>
             <div className={styles.card_footer}>
                 <Link className='btn dark-outline' to={`/post/${post.id}`}>Ler conteúdo</Link>
-                <img src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />
+                <div className={styles.userArea}>
+                    <img src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />
+                    <h3>{post.createdBy}</h3>
+                </div>
                 <div className={styles.tags_area}>
                     {post.tagsArray.map((tag) => (
                         <p key={tag}><span>#</span>{tag}</p>

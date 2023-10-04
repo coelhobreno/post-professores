@@ -93,8 +93,8 @@ textarea::placeholder {
 }
 
 .header h1 {
+    text-transform: none;
     position: relative;
-    text-transform: capitalize;
 }
 
 .header h1::after {
