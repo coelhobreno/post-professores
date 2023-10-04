@@ -28,9 +28,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             }
 
             setLoading(true)
-            
             const collectionRef = await collection(db, docCollection)
-            
 
             try{
 
@@ -63,8 +61,6 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
                     )
                     setLoading(false)
                 })
-
-                
 
             }catch(error){
 

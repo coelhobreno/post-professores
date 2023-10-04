@@ -15,8 +15,6 @@ const Search = () => {
 
     const {documents: posts, loading} = useFetchDocuments("posts", search)
 
-    console.log(posts)
-
     return(
         
         <div className={styles.search}>
