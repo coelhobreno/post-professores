@@ -6,6 +6,7 @@ import { useUpdateDocument } from '../../hooks/useUpdateDocument';
 import { useAuthValue } from '../../context/AuthContext'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useFetchDocument } from '../../hooks/useFetchDocument';
+import { isSpecialChacacters } from '../../components/isSpecialChacacters';
 
 //context
 import { useValueInsertContArea } from '../../context/InsertContextContArea';
@@ -64,6 +65,10 @@ const EditPost = () => {
             new URL(image)
         }catch(error){
             return setFormError("A imagem precisa ser uma URL.")
+        }
+
+        if(isSpecialChacacters(tags)){
+            return setFormError("O campo tags contém caracteres indesejados!")
         }
 
         //Criando array de tags

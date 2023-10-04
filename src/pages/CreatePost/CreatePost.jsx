@@ -5,6 +5,7 @@ import { useEffect, useState} from 'react'
 import { useInsertDocument } from '../../hooks/useInsertDocument';
 import { useAuthValue } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom';
+import { isSpecialChacacters } from '../../components/isSpecialChacacters';
 
 //component
 import { useValueInsertContArea } from '../../context/InsertContextContArea';
@@ -49,6 +50,10 @@ const CreatePost = () => {
             new URL(image)
         }catch(error){
             return setFormError("A imagem é inválida")
+        }
+
+        if(isSpecialChacacters(tags)){
+            return setFormError("O campo tags contém caracteres indesejados!")
         }
 
         //Criando array de tags
