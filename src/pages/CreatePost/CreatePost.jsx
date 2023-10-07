@@ -69,8 +69,6 @@ const CreatePost = () => {
             createdBy: user.displayName,
         })
 
-        console.log(inputState)
-
         dispatch({type: "CLEAR"})
         navigate("/")
         

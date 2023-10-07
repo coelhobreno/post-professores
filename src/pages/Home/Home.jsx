@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from "react-icons/ai";
 
 //hooks
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useFetchDocuments } from '../../hooks/useFetchDocuments'
-import { useAuthValue } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom';
 
 import CardPost from '../../components/CardPost'
@@ -19,7 +18,6 @@ const Home = () => {
 
     const navigate = useNavigate()
     const [search, setSearch] = useState("")
-    const { user } = useAuthValue()
 
     const { documents: posts, loading } = useFetchDocuments("posts")
 
@@ -32,10 +30,6 @@ const Home = () => {
         }
 
     }
-
-    useEffect(() => {
-        return console.log(posts)
-    }, [posts])
 
     return(
         

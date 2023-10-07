@@ -93,13 +93,24 @@ const Post = () => {
                         {docComments && docComments.map((comment, index) => (
                             <React.Fragment key={index}>
                                 
-                                {post && user.uid === comment.uid && (
-                                    <CardComment comment={comment} remove={true}/>
+                                {user ? (
+                                    <>
+                                        {post && user.uid === comment.uid && (
+                                        <CardComment comment={comment} remove={true}/>
+                                        )}
+
+                                        {post && user.uid !== comment.uid && (
+                                            <CardComment comment={comment}/>
+                                        )}
+                                    </>
+                                ) : (
+                                    <>
+                                        {post && (
+                                            <CardComment comment={comment}/>  
+                                        )}
+                                    </>
                                 )}
 
-                                {post && user.uid !== comment.uid && (
-                                    <CardComment comment={comment}/>
-                                )}
                             </React.Fragment>
 ))}
                     </div>
