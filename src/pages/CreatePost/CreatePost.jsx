@@ -53,7 +53,7 @@ const CreatePost = () => {
         }
 
         if(isSpecialChacacters(tags)){
-            return setFormError("O campo tags contém caracteres indesejados!")
+            return setFormError("O campo 'tags' está com caracteres indesejados. Por favor, evite o uso de acentos e caracteres especiais, como '@', '#', '.' e outros")
         }
 
         //Criando array de tags

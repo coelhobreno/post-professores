@@ -8,6 +8,7 @@ import {
 } from 'firebase/firestore'
 
 export const useFetchDocument = (docCollection, id) => {
+    
     const [cancelled, setCancelled] = useState(false)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)

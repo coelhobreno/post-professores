@@ -9,16 +9,14 @@ import {
     where
  } from "firebase/firestore"
 
-export const useFetchDocuments = (docCollection, search = null, uid = null) => {
+export const useFetchCommentarys = (docCollection, idPost) => {
     
     const [loading, setLoading] = useState(null)
     const [error, setError] = useState(null)
-    const [documents, setDocuments] = useState(null)
+    const [docComments, setDocComments] = useState(null)
 
-    //memory leak
     const [cancelled, setCancelled] = useState(false)
     
-    //servirá para o get, search e get individual
     useEffect(() => {
 
         const loadData = async() => {
@@ -34,29 +32,13 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             try{
 
                 let q
-                
-
-                //get, referenciando minha coleção
-                if(search){
-
-                    q = await query(collectionRef, where("tagsArray", "array-contains", search), 
-                    orderBy("createdAt", "desc"))
+    
+                q = await query(collectionRef, where("idPost", "==", idPost), 
+                orderBy("createdAt", "asc"))
                     
-                }else if(uid){
-                    
-                    q = await query(collectionRef, where("uid", "==", uid), 
-                    orderBy("createdAt", "desc"))
-
-                }else{
-                    q = await query(collectionRef, orderBy("createdAt","desc"))
-                }
-
-                //mapeamento dos docs em tempo real
-                //o "q" é uma "array" e o querySnapshot representa o item no mapeamento, também uma array
                 await onSnapshot(q, (querySnapshot) => {
-                    setDocuments(
+                    setDocComments(
                         querySnapshot.docs.map((doc) => ({
-                            //os id fica separado
                             id: doc.id,
                             ...doc.data()
                         }))
@@ -74,12 +56,12 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         
         loadData()
 
-    }, [docCollection, documents, search, uid, cancelled])
+    }, [docCollection, docComments, idPost, cancelled])
     
     useEffect(() => {
         return () => setCancelled(true)
     }, [])
     
-    return {documents, loading, error}
+    return {docComments, loading, error}
 
 }
