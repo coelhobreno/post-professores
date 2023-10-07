@@ -48,7 +48,6 @@ const Post = () => {
 
         insertCommentary(commentDoc)
         inputCommentRef.current.value = ""
-        console.log("Cadastrado!")
     }
     
     return (
@@ -94,11 +93,11 @@ const Post = () => {
                         {docComments && docComments.map((comment, index) => (
                             <React.Fragment key={index}>
                                 
-                                {user.uid === comment.uid && (
+                                {post && user.uid === comment.uid && (
                                     <CardComment comment={comment} remove={true}/>
                                 )}
 
-                                {user.uid !== comment.uid && (
+                                {post && user.uid !== comment.uid && (
                                     <CardComment comment={comment}/>
                                 )}
                             </React.Fragment>
