@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+//CSS Global
+import GlobalStyles from './styles/GlobalStyles'
+
 import './App.css'
 
 //firebase
@@ -14,20 +17,23 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 //pages
-import Home from './pages/Home/Home'
-import About from './pages/About/About'
-import Login from './pages/Login/Login'
-import Register from './pages/Register/Register'
-import Dashboard from './pages/Dashboard/Dashboard'
-import CreatePost from './pages/CreatePost/CreatePost'
-import Search from './pages/Search/Search'
-import Post from './pages/Post/Post'
+import Home from './pages/Home/index'
+import About from './pages/About/index'
+import Search from './pages/Search/index'
+import Post from './pages/Post/index'
+import Login from './pages/Login/index'
+import Register from './pages/Register/index'
+import Dashboard from './pages/Dashboard/index'
+import CreatePost from './pages/CreatePost/index'
+import EditPost from './pages/EditPost/index'
 
 //hooks
 import { useAuthentication } from './hooks/useAuthentication'
 import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
-import EditPost from './pages/EditPost/EditPost'
+
+//components
+import { BoxLoading } from './components/Others/Loading'
 
 function App() {
 
@@ -41,7 +47,7 @@ function App() {
   }, [auth])
 
   if(user === undefined){
-    return <p>Carregando...</p>
+    return <BoxLoading/>
   }
 
   return (
@@ -70,6 +76,8 @@ function App() {
         </BrowserRouter>
       </AuthContextProvider>
       </InsertContextContAreaProvider>
+
+      <GlobalStyles/>
     </div>
 
   )

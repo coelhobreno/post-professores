@@ -107,9 +107,7 @@ export const useAuthentication = () => {
     }
     
     useEffect(()=>{
-        return () => {
-            setCancelled(true)
-        }
+        return () => setCancelled(true)
     },[])
 
     return {loading, error, auth, logout, login, createUser}
