@@ -4,8 +4,6 @@ import { getFirestore } from "firebase/firestore"
 
 import firebaseConfig from "./firebaseConfig";
 
-import 'dotenv/config'
-
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app)
