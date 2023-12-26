@@ -29,8 +29,11 @@ export const Description = styled.div`
 `
 
 export const Image = styled.img`
-    margin-top: 20px;
     width: 100%;
+    min-height: 400px;
+
+    margin-top: 20px;
+    
     border: 1px solid var(--border-outline);
 `
 
