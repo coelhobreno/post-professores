@@ -1,4 +1,4 @@
-import { InputArea, IconSearch, Input, Button, IconGlass } from './styles'
+import { InputArea, IconSearch, Input, Button } from './styles'
 
 
 const SearchArea = ({
