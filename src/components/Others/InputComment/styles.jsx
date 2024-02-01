@@ -62,6 +62,8 @@ export const ButtonComment = styled.button`
     &:hover {
         background-color: transparent;
     }
+
+    flex-shrink: 0;
 `
 
 export const IconSend = styled(AiOutlineSend)`

@@ -27,7 +27,7 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.p`
-    color: var(--tertiary);
+    color: var(--text-secondary);
     margin-top: 5px;
 `
 

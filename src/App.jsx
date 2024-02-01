@@ -35,6 +35,8 @@ import { Navigate } from 'react-router-dom'
 //components
 import { BoxLoading } from './components/Others/Loading'
 
+import Fade from './components/Fade'
+
 function App() {
 
   const { auth } = useAuthentication()
@@ -52,9 +54,10 @@ function App() {
 
   return (
      
-    <div className="App">
+    <div className="App" id='App'>
+      <Fade />
       <InsertContextContAreaProvider>
-        <AuthContextProvider value={{user}}>
+        <AuthContextProvider value={{ user }}>
         <BrowserRouter>
             <Navbar/>
             <div className="container">

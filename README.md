@@ -2,11 +2,11 @@
 
 <p align="center">
   <h3>Autenticação:</h3>
-  <img src="/public/img_site_prof_1.png" width="800" />
+  <img src="/src/assets/img_site_prof_1.png" width="800" />
   <h3>Área de posts:</h3>
-  <img src="/public/img_site_prof_2.png" width="800" />
+  <img src="/src/assets/img_site_prof_2.png" width="800" />
   <h3>Conteúdo e comentários:</h3>
-  <img src="/public/img_site_prof_3.png" width="800" />
+  <img src="/src/assets/img_site_prof_3.png" width="800" />
 </p>
 
 ## Descrição

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 export const FormDefault = styled.div` 
     width: 90%;
 
+    padding: 50px 0 0;
+
     margin: 0 auto;
     max-width: 800px;
 ` 

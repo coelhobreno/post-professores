@@ -11,6 +11,8 @@ export const Container = styled.div`
 
     margin: 0 auto;
 
+    padding: 50px 0 0;
+
     > a {
         width: fit-content;
         font-weight: 600;
@@ -44,6 +46,11 @@ export const Header = styled.h2`
 export const Title = styled.h1`
     font-size: 40px;
     line-height: 40px;
+
+    @media (max-width: 500px){
+        font-size: 30px;
+        line-height: 30px;
+    }
 `
 
 export const Description = styled.p`

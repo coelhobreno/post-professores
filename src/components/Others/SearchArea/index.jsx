@@ -1,4 +1,4 @@
-import { InputArea, IconSearch, Input, Button } from './styles'
+import { InputArea, IconSearch, Input, Button, IconGlass } from './styles'
 
 
 const SearchArea = ({
@@ -8,8 +8,8 @@ const SearchArea = ({
     return (
         <>
             <InputArea>
-                    <IconSearch/>
-                    <Input 
+                <IconSearch/>
+                <Input 
                     type="text" 
                     placeholder='Pesquisa por tags...' 
                     onChange={(e) => setSearch(e.target.value)}

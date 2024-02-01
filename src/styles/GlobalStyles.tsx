@@ -17,6 +17,9 @@ export default createGlobalStyle`
     body{
         background-color: var(--secondary);
         color: var(--text-primary);
+
+        width: 100%;
+        height: 100%;
     }
 
     li {
@@ -57,6 +60,14 @@ export default createGlobalStyle`
     textarea::placeholder {
         color: #AAA;
     }
+
+    &.container{
+        min-height: 90vh;
+    }
+
+    &.hide {
+        display: none;
+    } 
 
     :root {
         --primary: #F4B670;

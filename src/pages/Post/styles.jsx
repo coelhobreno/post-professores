@@ -17,6 +17,11 @@ export const Title = styled.div`
     text-transform: uppercase;
     letter-spacing: 4px;
     line-height: 35px;
+
+    @media (max-width: 500px){
+        font-size: 18px;
+        line-height: 20px;
+    }
 `
 
 export const Description = styled.div`
@@ -30,7 +35,7 @@ export const Description = styled.div`
 
 export const Image = styled.img`
     width: 100%;
-    min-height: 400px;
+    
 
     margin-top: 20px;
     

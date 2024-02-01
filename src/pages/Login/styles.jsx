@@ -6,6 +6,8 @@ export const FormDefault = styled.div`
     width: 90%;
     margin: 0 auto;
 
+    padding: 50px 0 0;
+
     max-width: 800px;
 `
 

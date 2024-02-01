@@ -9,6 +9,9 @@ import { IoMdClose } from "react-icons/io";
 export const Container = styled.div`
     text-align: center;
     width: 90%;
+
+    padding: 50px 0 0;
+
     margin: 0 auto;
 `
 

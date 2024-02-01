@@ -4,6 +4,8 @@ import { Container, ImgUser, Input, ButtonComment, IconSend, BlockInput, Login }
 import { useInsertCommentary } from '../../../hooks/useInsertCommentary'
 import { Loading } from '../Loading'
 
+import userDefault from '../../../assets/user_default.png'
+
 const InputComment = ({
     user,
     idPost
@@ -43,7 +45,7 @@ const InputComment = ({
             {/*Input Area*/}
             
             <Container onSubmit={handleSubmit}>
-                <ImgUser src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />
+                <ImgUser src={userDefault} alt="" />
                 <Input 
                     type="text" 
                     placeholder='Escreva seu comentário...' 

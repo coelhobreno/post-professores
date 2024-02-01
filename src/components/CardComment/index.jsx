@@ -2,6 +2,8 @@ import { Container, InfoUser, Description, Image, IconRemove } from './styles'
 
 import { useDeleteComment } from '../../hooks/useDeleteComment'
 
+import userDefault from '../../assets/user_default.png'
+
 const CardComment = ({ 
     currentComment,
     canRemove
@@ -16,7 +18,7 @@ const CardComment = ({
     return(
         <Container>
             <InfoUser>
-                <Image src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />
+                <Image src={userDefault} alt="" />
                 <Description>
                     <h3>{createdBy}</h3>
                     <p>{comment}</p>

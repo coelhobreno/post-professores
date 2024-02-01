@@ -19,7 +19,6 @@ const Register = () => {
     const [phone, setPhone] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
-    const [gender, setGender] = useState("")
 
     const [formError, setFormError] = useState("")
 
