@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 import { FaRegLightbulb } from "react-icons/fa6";
-import { IoMdMenu } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
+import { IoMdMenu } from "react-icons/io"
 
  export const Container = styled.nav`
      //Not Responsive
